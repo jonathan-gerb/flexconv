@@ -23,7 +23,7 @@ pip install git+https://github.com/jonathan-gerb/flexconv/tree/main
 # Usage
 Import the FlexConv modules from the package, can be used directly in your torch models.
 ```
-from flexconv import FlexConv, SeparableFlexConv,
+from flexconv import FlexConv, SeparableFlexConv
 in_channels = 3
 out_channels = 32
 n_dims = 2 # 1 for sequential data, 2 for image etc.
