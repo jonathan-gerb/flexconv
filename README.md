@@ -4,13 +4,16 @@
 
 Easy to use Pytorch implementation of FlexConv and CCNN from:
 
-> Modelling long range dependencies in nd: from task-specific to a general purpose cnn.
+> Modelling Long Range Dependencies in N-D: From Task-Specific to a General Purpose CNN](https://arxiv.org/abs/2301.10540)
 
-by Knigge et al. 
+by Knigge et al.
 
-link: [https://arxiv.org/pdf/2301.10540.pdf](https://arxiv.org/pdf/2301.10540.pdf)
+**Abstract**
 
-Adapted fromt the original codebase:
+Performant Convolutional Neural Network (CNN) architectures must be tailored to specific tasks in order to consider the length, resolution, and dimensionality of the input data. In this work, we tackle the need for problem-specific CNN architectures.\break We present the \textit{Continuous Convolutional Neural Network} (CCNN): a single CNN able to process data of arbitrary resolution, dimensionality and length without any structural changes.  Its key component are its \textit{continuous convolutional kernels} which model long-range dependencies at every layer, and thus remove the need of current CNN architectures for task-dependent downsampling and depths. We showcase the generality of our method by using the \emph{same architecture} for tasks on sequential (1D), visual (2D) and point-cloud (3D) data. Our CCNN matches and often outperforms the current state-of-the-art across all tasks considered.
+### Installation
+
+Adapted from the original codebase with a few minor changes:
 https://github.com/david-knigge/ccnn/tree/main
 
 
@@ -47,3 +50,14 @@ For some additional initialization examples and a training example, see the `not
 
 ### FFT Convolutions
 By default FFT convolutions are used for any input size/kernel size bigger than 100 as this is when FFT convolutions are faster than spatial convolutions.
+
+### Cite
+If you found this work useful in your research, please consider citing:
+
+```
+@article{knigge2023modelling,
+  title={Modelling Long Range Dependencies in N-D: From Task-Specific to a General Purpose CNN},
+  author={Knigge, David M and Romero, David W and Gu, Albert and Bekkers, Erik J and Gavves, Efstratios and Tomczak, Jakub M and Hoogendoorn, Mark and Sonke, Jan-Jakob},
+  journal={International Conference on Learning Representations},
+  year={2023}
+}
