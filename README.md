@@ -8,7 +8,7 @@ Easy to use Pytorch implementation of FlexConv and CCNN from:
 
 by Knigge et al. 
 
-link: (https://arxiv.org/pdf/2301.10540.pdf)[https://arxiv.org/pdf/2301.10540.pdf]
+link: [https://arxiv.org/pdf/2301.10540.pdf](https://arxiv.org/pdf/2301.10540.pdf)
 
 Adapted fromt the original codebase:
 https://github.com/david-knigge/ccnn/tree/main
