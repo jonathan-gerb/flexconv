@@ -32,6 +32,11 @@ out_channels = 32
 n_dims = 2 # 1 for sequential data, 2 for image etc.
 conv = FlexConv(in_channels, out_channels, n_dims)
 sep_conv = SeparableFlexConv(in_channels, out_channels, n_dims)
+
+batch = torch.randn(1, in_channels, 100, 100)
+out = conv(batch)
+out = sep_conv(batch)
+
 ```
 The package also contains The CCNN and CCNNBlock:
 ```
@@ -43,6 +48,10 @@ n_dims = 2 # 1 for sequential data, 2 for image etc.
 
 model = CCNN(in_channels, out_channels, data_dim=n_dims, no_hidden=380, no_blocks=6)
 ccnn_block = CCNNBlock(in_channels, out_channels, data_dim=n_dims)
+
+batch = torch.randn(1, in_channels, 100, 100)
+out = model(batch)
+out = ccnn_block(batch)
 
 ```
 For additional options, such as kernel network options and masking options etc, see the docstrings. Other modules such as TCNBlock are also available, but have not been tested extensively. 
