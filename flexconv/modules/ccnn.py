@@ -44,12 +44,17 @@ class CCNNBlock(S4Block):
             kernel_no_layers (int, optional): number of layers of the kernel network
         """
 
+        if data_dim == 1:
+            causal = True
+        else:
+            causal = False
+
         if separable:
             ConvType = partial(SeparableFlexConv, data_dim=data_dim, conv_use_fft=conv_use_fft, kernel_size=kernel_size,
-                               kernel_omega_0=kernel_omega_0, kernel_no_hidden=kernel_no_hidden, kernel_no_layers=kernel_no_layers)
+                               kernel_omega_0=kernel_omega_0, kernel_no_hidden=kernel_no_hidden, kernel_no_layers=kernel_no_layers, conv_causal=causal)
         else:
             ConvType = partial(FlexConv, data_dim=data_dim, conv_use_fft=conv_use_fft, kernel_size=kernel_size,
-                               kernel_omega_0=kernel_omega_0, kernel_no_hidden=kernel_no_hidden, kernel_no_layers=kernel_no_layers)
+                               kernel_omega_0=kernel_omega_0, kernel_no_hidden=kernel_no_hidden, kernel_no_layers=kernel_no_layers, conv_causal=causal)
         NonlinearType = torch.nn.GELU
 
         # Define NormType

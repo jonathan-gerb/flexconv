@@ -91,6 +91,7 @@ def conv_base(
     if causal:
         assert data_dim == 1, f"Causal only available for data of dimension 1, not {data_dim}"
         x, kernel = causal_padding(x, kernel)
+        padding = 0
     else:
         padding = (kernel_size // 2).tolist()
         assert torch.all(
